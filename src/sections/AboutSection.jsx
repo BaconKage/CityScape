@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ShieldCheck, Award, Search, Users, TabletSmartphone, TrendingUp, CheckCircle2, Linkedin } from 'lucide-react'
+import { ShieldCheck, Award, Search, Users, TabletSmartphone, TrendingUp, Linkedin } from 'lucide-react'
 import SectionHeader from '../components/ui/SectionHeader'
 import { aboutData } from '../data/siteData'
 import RevealCard from '../components/ui/RevealCard'
@@ -30,9 +30,9 @@ export default function AboutSection() {
         <div className="mt-12 grid lg:grid-cols-[1.15fr_0.85fr] gap-8 items-start">
           <RevealCard>
             <div className="section-surface p-6 md:p-8" data-levitate>
-              <p className="text-sm uppercase tracking-[0.24em] text-gold-100">Cityscape Narrative</p>
+              <p className="text-sm uppercase tracking-[0.24em] text-gold-100">Cityscape in 40 Seconds</p>
               <h3 className="mt-4 text-3xl md:text-4xl leading-tight">
-                Exclusive representation, trusted execution
+                Premium execution for residential development sales
               </h3>
               <div className="mt-5 space-y-4 text-stone/85 text-lg leading-relaxed">
                 {aboutData.story.map((line, index) => (
@@ -86,67 +86,48 @@ export default function AboutSection() {
         </div>
 
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
-          {aboutData.models.map((model) => (
-            <RevealCard key={model.title}>
-              <div className="section-surface p-6 md:p-8" data-levitate>
-                <h4 className="text-xl font-semibold text-gold-100">{model.title}</h4>
-                <ul className="mt-5 grid gap-3">
-                  {model.points.map((point) => (
-                    <li key={point} className="text-sm md:text-base flex items-start gap-3 text-stone/82">
-                      <CheckCircle2 size={18} className="mt-0.5 text-gold-100/95 shrink-0" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
+          <RevealCard>
+            <div className="section-surface p-6 md:p-8" data-levitate>
+              <p className="text-sm uppercase tracking-[0.24em] text-gold-100">How We Work</p>
+              <h4 className="mt-3 text-2xl md:text-3xl font-semibold">Execution Framework</h4>
+              <div className="mt-5 grid gap-3">
+                {aboutData.models.map((model) => (
+                  <div
+                    key={model.title}
+                    className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm md:text-base text-stone/82"
+                  >
+                    <p className="font-medium text-white">{model.title}</p>
+                    <p className="mt-1">{model.points[0]}</p>
+                  </div>
+                ))}
               </div>
-            </RevealCard>
-          ))}
+            </div>
+          </RevealCard>
+
+          <RevealCard>
+            <div className="section-surface p-6 md:p-8" data-levitate>
+              <p className="text-sm uppercase tracking-[0.24em] text-gold-100">Lead Engine</p>
+              <h4 className="mt-3 text-2xl md:text-3xl font-semibold">{aboutData.leadGeneration.title}</h4>
+              <p className="mt-3 text-stone/80 leading-relaxed">
+                {aboutData.leadGeneration.approach}
+              </p>
+
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {aboutData.leadGeneration.mix.map((item) => (
+                  <div
+                    key={item.channel}
+                    className="rounded-lg border border-white/10 px-4 py-3 bg-white/5 flex justify-between text-sm"
+                  >
+                    <span className="text-stone/82">{item.channel}</span>
+                    <span className="font-semibold text-gold-100">{item.contribution}</span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="mt-5 text-sm text-stone/72">{aboutData.leadGeneration.objective}</p>
+            </div>
+          </RevealCard>
         </div>
-
-        <RevealCard>
-          <div className="mt-5 section-surface p-6 md:p-8" data-levitate>
-            <h4 className="text-2xl md:text-3xl font-semibold">
-              {aboutData.leadGeneration.title}
-            </h4>
-            <p className="mt-3 text-stone/80 leading-relaxed">
-              {aboutData.leadGeneration.approach}
-            </p>
-
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {aboutData.leadGeneration.mix.map((item) => (
-                <div
-                  key={item.channel}
-                  className="rounded-xl border border-white/10 bg-white/5 px-4 py-4 flex items-center justify-between"
-                >
-                  <span className="text-sm text-stone/82">{item.channel}</span>
-                  <span className="font-semibold text-gold-100">{item.contribution}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <div className="rounded-xl border border-white/10 p-4 bg-white/5">
-                <p className="font-medium text-gold-100">Digital Marketing Initiatives</p>
-                <ul className="mt-3 grid gap-2 text-sm text-stone/82">
-                  {aboutData.leadGeneration.digital.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="rounded-xl border border-white/10 p-4 bg-white/5">
-                <p className="font-medium text-gold-100">Channel & Offline Initiatives</p>
-                <ul className="mt-3 grid gap-2 text-sm text-stone/82">
-                  {[...aboutData.leadGeneration.partners, ...aboutData.leadGeneration.offline, ...aboutData.leadGeneration.referrals].map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <p className="mt-6 text-sm text-stone/72">{aboutData.leadGeneration.objective}</p>
-          </div>
-        </RevealCard>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {aboutData.leadership.map((person) => (
@@ -173,3 +154,4 @@ export default function AboutSection() {
     </section>
   )
 }
+

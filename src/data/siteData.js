@@ -36,65 +36,51 @@ export const heroData = {
 export const aboutData = {
   title: 'About Cityscape Consulting',
   subtitle:
-    'A boutique mandate-led real estate consulting firm focused on launches, sales velocity, and execution-grade growth.',
+    'A boutique, mandate-led real estate partner for residential launches in Bengaluru.',
   story: [
-    'Cityscape Consulting LLP is a boutique real estate sales and marketing firm specializing in project launches, sales strategy, and high-velocity inventory liquidation for residential developments in Bengaluru.',
-    'The firm is led by experienced industry professionals with decades of combined experience in real estate marketing, sales leadership, and project launches across multiple leading real estate organisations.',
-    'Unlike traditional mandate firms that operate primarily at a strategic advisory level, Cityscape Consulting works as an execution-focused partner, actively involved in building sales teams, activating broker networks, and managing day-to-day sales operations.',
-    'Over a short span of operations, the firm has successfully facilitated â‚¹200+ crore worth of real estate transactions within 8â€“10 months across its mandates, including projects from developers with limited brand visibility and minimal marketing support.',
+    'Cityscape Consulting is a premium launch partner for developers who want demand, demand quality, and faster inventory movement with minimal clutter.',
+    'We go beyond advisory support by building sales teams, broker networks, and day-to-day execution systems that convert interest into bookings.',
+    'Cityscape has generated over 200+ crore in real estate sales within 8–10 months across mandates with lower brand visibility at launch.',
   ],
   approach: [
-    'Curate project narratives around unique buyer value.',
-    'Protect pricing narrative and maintain campaign discipline.',
-    'Scale premium demand through channel and digital orchestration.',
-    'Convert high-intent leads via guided sales enablement.',
+    'Execution-first consulting: we operate like your in-house sales partner.',
+    'Selective mandates (2–3 annually) for senior-level attention and speed.',
+    'Pre-launch planning to create demand before the market opens.',
+    'Disciplined pricing, reporting, and conversion tracking to close faster.',
   ],
   models: [
     {
-      title: 'Boutique Model with Undivided Focus',
+      title: 'Boutique Mandate Model',
       points: [
-        'Cityscape Consulting intentionally undertakes only 2â€“3 mandates annually.',
-        'Dedicated senior management attention.',
-        'Focused sales team deployment.',
-        'Faster decision-making.',
-        'Stronger sales momentum.',
-        'Every project is treated as our own with ownership of sales outcomes.',
+        'Only 2–3 selected mandates each year.',
+        'Deep-focus teams and faster execution decisions.',
       ],
     },
     {
-      title: 'Direct Promoter Involvement from Day One',
+      title: 'Founder-Led Operations',
       points: [
-        'Sales strategy and pricing discussions.',
-        'Channel partner engagement.',
-        'Daily sales monitoring.',
-        'Site visits and customer meetings.',
-        'Direct participation in key deal closures.',
+        'Founders stay involved in strategy, pricing, and partner activation.',
+        'Direct involvement keeps sales direction sharp and responsive.',
       ],
     },
     {
-      title: 'Proven Success with Emerging Developers',
+      title: 'Emerging Developer Focus',
       points: [
-        'Strong project positioning for developers with limited market visibility.',
-        'Aggressive channel partner activation.',
-        'High-intensity lead generation.',
-        'Conversion-focused sales processes.',
-        'Built demand and credibility quickly for new market entrants.',
+        'Strong positioning for projects with limited visibility.',
+        'Fast trust-building through channel and digital demand generation.',
       ],
     },
     {
-      title: 'Early Market Preparation Before Launch',
+      title: 'Launch-Ready Preparation',
       points: [
-        'Channel partner mapping and engagement 2â€“3 months before launch.',
-        'Lead database creation.',
-        'Pre-launch demand generation.',
-        'Market positioning strategy to build launch-ready pipeline.',
+        'Pre-launch partner mapping and lead pipeline setup.',
+        'Demand, visibility, and close-ready processes before day one.',
       ],
     },
   ],
   leadGeneration: {
-    title: 'Comprehensive Lead Generation Strategy',
-    approach:
-      'Cityscape Consulting deploys a multi-channel lead generation approach designed to maximize both lead volume and conversion efficiency.',
+    title: 'Lead Engine',
+    approach: 'Multi-channel demand planning that balances lead volume with conversion quality.',
     mix: [
       { channel: 'Digital Marketing', contribution: '40%' },
       { channel: 'Channel Partners', contribution: '40%' },
@@ -102,60 +88,49 @@ export const aboutData = {
       { channel: 'Referrals & Investor Network', contribution: '5%' },
     ],
     digital: [
-      'Google search campaigns targeting premium buyer intent.',
-      'Social campaigns for professionals and NRI audiences.',
-      'Premium visual content including 3D renders and walkthroughs.',
-      'Project microsite with CRM integration.',
-      'WhatsApp lead nurturing journeys.',
+      'Search and social campaigns for high-intent buyers',
+      'Visual storytelling, renders, and project walk-through content',
+      'CRM lead capture plus WhatsApp follow-up',
     ],
     partners: [
-      'Pre-launch broker mapping in Bengaluru.',
-      'Structured broker onboarding and weekly engagement.',
-      'Competitive incentive programs.',
+      'Pre-launch broker mapping in Bengaluru',
+      'Structured onboarding and weekly engagement loops',
     ],
     offline: [
-      'Corporate outreach programs.',
-      'Broker networking events.',
-      'Investor meetings and launch events.',
-      'Location-based promotional activations.',
+      'Launch events and investor briefings',
+      'On-ground activations in priority micro-markets',
     ],
     referrals: [
-      'Early buyer incentive programs.',
-      'Investor engagement events.',
-      'NRI webinars and outreach.',
+      'Referral and investor circle outreach',
+      'NRI-focused conversion touchpoints',
     ],
     objective:
-      'The objective is strong early booking momentum, high site-visit conversion, and accelerated inventory movement with near-complete sellout potential within 6 months, depending on market and project readiness.',
+      'Target outcomes: early booking momentum, higher visit-to-booking conversion, and faster inventory movement in ~6 months.',
   },
   highlights: [
     {
       title: 'Exclusive Mandate Focus',
-      description: 'We only take carefully selected projects to preserve strategic concentration and brand trust.',
+      description: 'Only 2–3 mandates at a time for deep execution focus.',
       icon: 'Award',
     },
     {
-      title: 'Sales-Driven Strategy',
-      description: 'Built-to-convert plans across digital, partner networks, and on-ground lead flow.',
+      title: 'Sales-Led Strategy',
+      description: 'Campaigns designed for real conversions, not vanity metrics.',
       icon: 'TrendingUp',
     },
     {
       title: 'Market Intelligence',
-      description: 'Demand mapping, competitor benchmarking, and buyer psychology analysis.',
+      description: 'Demand planning, competitor insight, and pricing clarity.',
       icon: 'Search',
     },
     {
-      title: 'Channel Partner Network',
-      description: 'Structured activation and motivation architecture for sustained partner momentum.',
+      title: 'Channel Network',
+      description: 'Activated broker and partner ecosystems for scalable lead flow.',
       icon: 'Users',
     },
     {
-      title: 'Digital-First Campaigns',
-      description: 'Creative, performance, and retargeting programs aligned to premium conversion goals.',
-      icon: 'TabletSmartphone',
-    },
-    {
-      title: 'Transparency & Accountability',
-      description: 'Clear reporting rhythm, pipeline visibility, and measurable campaign governance.',
+      title: 'Execution Transparency',
+      description: 'Clear checkpoints, dashboards, and accountable ownership.',
       icon: 'ShieldCheck',
     },
   ],
@@ -172,7 +147,6 @@ export const aboutData = {
     },
   ],
 }
-
 export const serviceCards = [
   {
     title: 'Exclusive Project Representation',
@@ -451,4 +425,7 @@ export const chatPrompts = [
   'Can I submit my property requirement?',
   'Share your current projects',
 ]
+
+
+
 
