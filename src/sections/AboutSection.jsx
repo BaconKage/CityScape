@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ShieldCheck, Award, Search, Users, TabletSmartphone, TrendingUp, CheckCircle2 } from 'lucide-react'
+import { ShieldCheck, Award, Search, Users, TabletSmartphone, TrendingUp, CheckCircle2, Linkedin } from 'lucide-react'
 import SectionHeader from '../components/ui/SectionHeader'
 import { aboutData } from '../data/siteData'
 import RevealCard from '../components/ui/RevealCard'
@@ -147,6 +147,28 @@ export default function AboutSection() {
             <p className="mt-6 text-sm text-stone/72">{aboutData.leadGeneration.objective}</p>
           </div>
         </RevealCard>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {aboutData.leadership.map((person) => (
+            <a
+              key={person.name}
+              href={person.profile}
+              target="_blank"
+              rel="noreferrer"
+              className="section-surface p-6 flex items-start justify-between gap-4 hover:border-gold-100/45 transition-all"
+              data-levitate
+            >
+              <div>
+                <p className="text-sm uppercase tracking-[0.2em] text-gold-100/90">Founder</p>
+                <p className="mt-2 text-2xl md:text-3xl">{person.name}</p>
+                <p className="mt-1 text-stone/75">{person.title}</p>
+              </div>
+              <div className="rounded-full border border-white/15 h-10 w-10 grid place-items-center text-gold-100 mt-1">
+                <Linkedin size={18} />
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   )

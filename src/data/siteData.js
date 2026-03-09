@@ -159,6 +159,18 @@ export const aboutData = {
       icon: 'ShieldCheck',
     },
   ],
+  leadership: [
+    {
+      name: 'Mahesh S Wadhwa',
+      title: 'Founder - Managing Partner',
+      profile: 'https://www.linkedin.com/in/mahesh-s-wadhwa-56420818',
+    },
+    {
+      name: 'Viju Devaiah',
+      title: 'Partner',
+      profile: 'https://www.linkedin.com/in/devaiah-realestateconsulting-landprocurement-realestatemarketing-assetmanagement',
+    },
+  ],
 }
 
 export const serviceCards = [
