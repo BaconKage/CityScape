@@ -447,7 +447,7 @@ export const socialLinks = [
 
 export const chatPrompts = [
   'Tell me about your services',
-  'I'm looking for investment options',
+  "I'm looking for investment options",
   'Can I submit my property requirement?',
   'Share your current projects',
 ]
