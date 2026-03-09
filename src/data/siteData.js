@@ -34,17 +34,99 @@ export const heroData = {
 }
 
 export const aboutData = {
-  title: 'Who We Are',
+  title: 'About Cityscape Consulting',
   subtitle:
-    'A mandate-driven consulting partner for developers and investors who value precision.',
-  story:
-    "Cityscape Consulting is a mandate-focused real estate consulting firm specializing in exclusive project representation. We partner with developers as an extended sales and marketing arm, owning strategy, branding, lead generation, channel partner activation, and sales execution. Our focus is selected mandate projects, pricing integrity, reduced market clutter, and faster inventory movement through data-informed planning and structured sales processes.",
+    'A boutique mandate-led real estate consulting firm focused on launches, sales velocity, and execution-grade growth.',
+  story: [
+    'Cityscape Consulting LLP is a boutique real estate sales and marketing firm specializing in project launches, sales strategy, and high-velocity inventory liquidation for residential developments in Bengaluru.',
+    'The firm is led by experienced industry professionals with decades of combined experience in real estate marketing, sales leadership, and project launches across multiple leading real estate organisations.',
+    'Unlike traditional mandate firms that operate primarily at a strategic advisory level, Cityscape Consulting works as an execution-focused partner, actively involved in building sales teams, activating broker networks, and managing day-to-day sales operations.',
+    'Over a short span of operations, the firm has successfully facilitated ₹200+ crore worth of real estate transactions within 8–10 months across its mandates, including projects from developers with limited brand visibility and minimal marketing support.',
+  ],
   approach: [
     'Curate project narratives around unique buyer value.',
     'Protect pricing narrative and maintain campaign discipline.',
     'Scale premium demand through channel and digital orchestration.',
     'Convert high-intent leads via guided sales enablement.',
   ],
+  models: [
+    {
+      title: 'Boutique Model with Undivided Focus',
+      points: [
+        'Cityscape Consulting intentionally undertakes only 2–3 mandates annually.',
+        'Dedicated senior management attention.',
+        'Focused sales team deployment.',
+        'Faster decision-making.',
+        'Stronger sales momentum.',
+        'Every project is treated as our own with ownership of sales outcomes.',
+      ],
+    },
+    {
+      title: 'Direct Promoter Involvement from Day One',
+      points: [
+        'Sales strategy and pricing discussions.',
+        'Channel partner engagement.',
+        'Daily sales monitoring.',
+        'Site visits and customer meetings.',
+        'Direct participation in key deal closures.',
+      ],
+    },
+    {
+      title: 'Proven Success with Emerging Developers',
+      points: [
+        'Strong project positioning for developers with limited market visibility.',
+        'Aggressive channel partner activation.',
+        'High-intensity lead generation.',
+        'Conversion-focused sales processes.',
+        'Built demand and credibility quickly for new market entrants.',
+      ],
+    },
+    {
+      title: 'Early Market Preparation Before Launch',
+      points: [
+        'Channel partner mapping and engagement 2–3 months before launch.',
+        'Lead database creation.',
+        'Pre-launch demand generation.',
+        'Market positioning strategy to build launch-ready pipeline.',
+      ],
+    },
+  ],
+  leadGeneration: {
+    title: 'Comprehensive Lead Generation Strategy',
+    approach:
+      'Cityscape Consulting deploys a multi-channel lead generation approach designed to maximize both lead volume and conversion efficiency.',
+    mix: [
+      { channel: 'Digital Marketing', contribution: '40%' },
+      { channel: 'Channel Partners', contribution: '40%' },
+      { channel: 'Offline Activations', contribution: '15%' },
+      { channel: 'Referrals & Investor Network', contribution: '5%' },
+    ],
+    digital: [
+      'Google search campaigns targeting premium buyer intent.',
+      'Social campaigns for professionals and NRI audiences.',
+      'Premium visual content including 3D renders and walkthroughs.',
+      'Project microsite with CRM integration.',
+      'WhatsApp lead nurturing journeys.',
+    ],
+    partners: [
+      'Pre-launch broker mapping in Bengaluru.',
+      'Structured broker onboarding and weekly engagement.',
+      'Competitive incentive programs.',
+    ],
+    offline: [
+      'Corporate outreach programs.',
+      'Broker networking events.',
+      'Investor meetings and launch events.',
+      'Location-based promotional activations.',
+    ],
+    referrals: [
+      'Early buyer incentive programs.',
+      'Investor engagement events.',
+      'NRI webinars and outreach.',
+    ],
+    objective:
+      'The objective is strong early booking momentum, high site-visit conversion, and accelerated inventory movement with near-complete sellout potential within 6 months, depending on market and project readiness.',
+  },
   highlights: [
     {
       title: 'Exclusive Mandate Focus',
@@ -316,7 +398,7 @@ export const testimonials = [
 
 export const contactInfo = {
   address: '203 Basappa Road, Shanti Nagar, Bangalore, KA 560027, India',
-  email: 'hello@cityscapeconsulting.in',
+  email: 'contact@cityscapeconsulting.in',
   phone: '+91 97415 81039',
   whatsapp: `https://wa.me/${whatsappNumber}`,
 }
@@ -351,7 +433,8 @@ export const socialLinks = [
 
 export const chatPrompts = [
   'Tell me about your services',
-  'I’m looking for investment options',
+  'I'm looking for investment options',
   'Can I submit my property requirement?',
   'Share your current projects',
 ]
+
