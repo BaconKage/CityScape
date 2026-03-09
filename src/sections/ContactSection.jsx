@@ -1,8 +1,7 @@
 import React from 'react'
-import { Mail, MapPin, Phone, MessageCircle, Send } from 'lucide-react'
+import { MapPinned, Mail, MapPin, Phone, MessageCircle, Send } from 'lucide-react'
 import SectionHeader from '../components/ui/SectionHeader'
 import { contactInfo } from '../data/siteData'
-import AdaptiveImage from '../components/ui/AdaptiveImage'
 
 export default function ContactSection() {
   return (
@@ -42,11 +41,30 @@ export default function ContactSection() {
               Chat on WhatsApp
             </a>
 
-            <AdaptiveImage
-              src="https://images.unsplash.com/photo-1560185893-c8c8de2e8cd7?auto=format&fit=crop&w=1200&q=80"
-              alt="Cityscape Consulting office map area"
-              className="mt-8 rounded-2xl h-48 md:h-56 border border-white/10 animate-float-slow object-cover w-full"
-            />
+            <a
+              href={contactInfo.googleMaps}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open Cityscape Consulting on Google Maps"
+              data-interactive
+              data-levitate
+              className="mt-8 block rounded-2xl overflow-hidden border border-white/15 bg-white/5 hover:border-gold-100/40 transition-colors"
+            >
+              <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2 text-sm text-stone/80">
+                  <MapPinned size={16} className="text-gold-100" />
+                  <span>Interactive map preview</span>
+                </div>
+                <span className="text-xs uppercase tracking-wider text-gold-100">Open in Google Maps</span>
+              </div>
+              <iframe
+                src={contactInfo.mapEmbed}
+                title="Cityscape Consulting location"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-56 md:h-60 w-full border-0 pointer-events-none"
+              />
+            </a>
           </div>
 
           <form className="section-surface p-6 md:p-8" data-levitate onSubmit={(e) => e.preventDefault()}>

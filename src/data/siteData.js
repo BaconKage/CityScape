@@ -413,6 +413,8 @@ export const contactInfo = {
   email: 'contact@cityscapeconsulting.in',
   phone: '+91 97415 81039',
   whatsapp: `https://wa.me/${whatsappNumber}`,
+  googleMaps: 'https://maps.app.goo.gl/o87t3t9f6H7YFN4B7',
+  mapEmbed: 'https://www.google.com/maps?q=203%20Basappa%20Road,%20Shanti%20Nagar,%20Bengaluru,%20KA%20560027&output=embed',
 }
 
 export const socialLinks = [
