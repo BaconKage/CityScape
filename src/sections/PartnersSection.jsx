@@ -68,7 +68,7 @@ export default function PartnersSection() {
           </div>
         </div>
 
-          <div className="mt-10 rounded-3xl glass border border-white/10 p-6 md:p-8 grid md:grid-cols-[1fr_1.5fr] gap-5">
+        <div className="mt-10 rounded-3xl glass border border-white/10 p-6 md:p-8 grid md:grid-cols-[1fr_1.5fr] gap-5">
           <div className="section-surface p-6" data-levitate>
             <p className="text-sm uppercase tracking-[0.2em] text-gold-100">Partner Voice</p>
             <h3 className="mt-4 text-2xl md:text-3xl">What our development partners say</h3>
@@ -82,12 +82,12 @@ export default function PartnersSection() {
               <Quote size={18} />
             </div>
             <p className="text-lg leading-relaxed text-stone/85">
-              “Cityscape gave us a clear premium positioning and an execution partner who understands every stage from
+              "Cityscape gave us a clear premium positioning and an execution partner who understands every stage from
               demand generation to conversion. Their discipline around pricing and communication consistency raised our sales
-              confidence substantially.”
+              confidence substantially."
             </p>
             <p className="mt-5 text-sm text-gold-100">
-              — Partner Team, Meridian Developers
+              - Partner Team, Meridian Developers
             </p>
           </div>
         </div>

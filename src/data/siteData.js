@@ -40,11 +40,11 @@ export const aboutData = {
   story: [
     'Cityscape Consulting is a premium launch partner for developers who want demand, demand quality, and faster inventory movement with minimal clutter.',
     'We go beyond advisory support by building sales teams, broker networks, and day-to-day execution systems that convert interest into bookings.',
-    'Cityscape has generated over 200+ crore in real estate sales within 8–10 months across mandates with lower brand visibility at launch.',
+    'Cityscape has generated over 200+ crore in real estate sales within 8-10 months across mandates with lower brand visibility at launch.',
   ],
   approach: [
     'Execution-first consulting: we operate like your in-house sales partner.',
-    'Selective mandates (2–3 annually) for senior-level attention and speed.',
+    'Selective mandates (2-3 annually) for senior-level attention and speed.',
     'Pre-launch planning to create demand before the market opens.',
     'Disciplined pricing, reporting, and conversion tracking to close faster.',
   ],
@@ -52,7 +52,7 @@ export const aboutData = {
     {
       title: 'Boutique Mandate Model',
       points: [
-        'Only 2–3 selected mandates each year.',
+        'Only 2-3 selected mandates each year.',
         'Deep-focus teams and faster execution decisions.',
       ],
     },
@@ -110,7 +110,7 @@ export const aboutData = {
   highlights: [
     {
       title: 'Exclusive Mandate Focus',
-      description: 'Only 2–3 mandates at a time for deep execution focus.',
+      description: 'Only 2-3 mandates at a time for deep execution focus.',
       icon: 'Award',
     },
     {
@@ -425,6 +425,7 @@ export const chatPrompts = [
   'Can I submit my property requirement?',
   'Share your current projects',
 ]
+
 
 
 

@@ -71,8 +71,9 @@ export default function FooterSection() {
         </div>
       </div>
       <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-stone/70">
-        © {new Date().getFullYear()} {brand.name}. All rights reserved.
+        Copyright {new Date().getFullYear()} {brand.name}. All rights reserved.
       </div>
     </footer>
   )
 }
+

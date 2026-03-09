@@ -9,7 +9,7 @@ export default function ContactSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Contact"
-          title="Let’s Plan Your Next Launch"
+          title="Let's Plan Your Next Launch"
           description="We will respond with a focused discussion plan for your project mandate."
           light
         />
@@ -121,3 +121,4 @@ export default function ContactSection() {
     </section>
   )
 }
+
