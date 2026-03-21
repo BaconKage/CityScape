@@ -7,6 +7,7 @@ import ServicesSection from './sections/ServicesSection'
 import ProjectsSection from './sections/ProjectsSection'
 import PartnersSection from './sections/PartnersSection'
 import ProcessSection from './sections/ProcessSection'
+import FAQSection from './sections/FAQSection'
 import ImpactSection from './sections/ImpactSection'
 import TestimonialsSection from './sections/TestimonialsSection'
 import ContactSection from './sections/ContactSection'
@@ -73,6 +74,7 @@ function App() {
         <ProjectsSection />
         <PartnersSection />
         <ProcessSection />
+        <FAQSection />
         <ImpactSection />
         <TestimonialsSection />
         <ContactSection />

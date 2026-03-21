@@ -38,6 +38,14 @@ export default function ServicesSection() {
         <div className="mt-10 grid md:grid-cols-2 xl:grid-cols-4 gap-5">
           {serviceCards.map((service, idx) => {
             const Icon = serviceIcons[service.icon] || Award
+            const colors = [
+              'text-urbanBlue-100 border-urbanBlue-500/30 from-urbanBlue-500/10 to-transparent',
+              'text-emerald-100 border-emerald-500/30 from-emerald-500/10 to-transparent',
+              'text-gold-100 border-gold-500/30 from-gold-500/10 to-transparent',
+              'text-rust-100 border-rust-500/30 from-rust-500/10 to-transparent',
+              'text-steelBlue-100 border-steelBlue-500/30 from-steelBlue-500/10 to-transparent',
+            ]
+            const activeColor = colors[idx % colors.length]
             return (
               <motion.div
                 key={service.title}
@@ -45,11 +53,13 @@ export default function ServicesSection() {
                 data-levitate
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: 'spring', stiffness: 250, damping: 22 }}
-                className="group section-surface p-5 md:p-6 transition-all duration-300 hover:border-gold-100/40"
+                className={`group section-surface border bg-gradient-to-br ${activeColor} p-5 md:p-6 transition-all duration-300 hover:scale-[1.02] shadow-lg`}
                 style={{ transitionDelay: `${idx * 50}ms` }}
               >
                 <div className="flex items-start justify-between">
-                  <div className="h-11 w-11 rounded-xl border border-gold-100/30 bg-gold-100/10 grid place-items-center text-gold-100">
+                  <div
+                    className={`h-11 w-11 rounded-xl border border-current/25 bg-charcoal/45 grid place-items-center text-current`}
+                  >
                     <Icon size={20} />
                   </div>
                   <span className="text-xs text-gold-100 uppercase tracking-wide">Service</span>

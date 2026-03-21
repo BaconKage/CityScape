@@ -11,6 +11,7 @@ export const navLinks = [
   { label: 'Services', href: '#services' },
   { label: 'Projects', href: '#projects' },
   { label: 'Partners', href: '#partners' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -19,17 +20,19 @@ export const whatsappNumber = '919741581039'
 export const heroData = {
   title: 'Elevating Real Estate Visibility, Sales & Strategy',
   subtitle:
-    'Exclusive project representation, refined positioning, and conversion-ready campaign systems for builders who demand premium execution.',
+    'Premium project representation • Faster inventory movement • Execution-driven consulting • Strong developer partnerships',
   backgroundImage:
     'https://images.unsplash.com/photo-1600596542815-ffad4c1539e0?auto=format&fit=crop&w=2200&q=80',
   badges: [
     'Exclusive Project Representation',
-    'Sales-Led Growth Framework',
-    'Architectural Brand Positioning',
+    'Premium Mandate Execution',
+    'Multi-channel Demand Creation',
+    'High-intent Sales Pipeline',
   ],
   statCards: [
-    { label: 'Avg. Inventory Turnaround', value: '42 Days', note: 'for launch-to-qualified-lead cycle' },
-    { label: 'Lead Qualification Quality', value: '+38%', note: 'Higher intent leads after strategy reset' },
+    { label: 'Avg. Inventory Turnaround', value: '42 Days', note: 'from launch to quality lead pipeline' },
+    { label: 'Lead Qualification Quality', value: '+38%', note: 'qualified leads through strict screening' },
+    { label: 'Premium Mandate Execution', value: '2-3', note: 'projects at a time for focused ownership' },
   ],
 }
 
@@ -38,15 +41,12 @@ export const aboutData = {
   subtitle:
     'A boutique, mandate-led real estate partner for residential launches in Bengaluru.',
   story: [
-    'Cityscape Consulting is a premium launch partner for developers who want demand, demand quality, and faster inventory movement with minimal clutter.',
-    'We go beyond advisory support by building sales teams, broker networks, and day-to-day execution systems that convert interest into bookings.',
-    'Cityscape has generated over 200+ crore in real estate sales within 8-10 months across mandates with lower brand visibility at launch.',
+    'Cityscape Consulting is a premium mandate partner for faster inventory movement.',
+    'We combine project representation, brand clarity, and execution discipline to help premium launches sell with confidence.',
   ],
   approach: [
-    'Execution-first consulting: we operate like your in-house sales partner.',
-    'Selective mandates (2-3 annually) for senior-level attention and speed.',
-    'Pre-launch planning to create demand before the market opens.',
-    'Disciplined pricing, reporting, and conversion tracking to close faster.',
+    'Execution-first consulting with a boutique mandate model.',
+    'Pre-launch demand build, partner-led activation, and conversion discipline across every stage.',
   ],
   models: [
     {
@@ -80,32 +80,10 @@ export const aboutData = {
   ],
   leadGeneration: {
     title: 'Lead Engine',
-    approach: 'Multi-channel demand planning that balances lead volume with conversion quality.',
-    mix: [
-      { channel: 'Digital Marketing', contribution: '40%' },
-      { channel: 'Channel Partners', contribution: '40%' },
-      { channel: 'Offline Activations', contribution: '15%' },
-      { channel: 'Referrals & Investor Network', contribution: '5%' },
-    ],
-    digital: [
-      'Search and social campaigns for high-intent buyers',
-      'Visual storytelling, renders, and project walk-through content',
-      'CRM lead capture plus WhatsApp follow-up',
-    ],
-    partners: [
-      'Pre-launch broker mapping in Bengaluru',
-      'Structured onboarding and weekly engagement loops',
-    ],
-    offline: [
-      'Launch events and investor briefings',
-      'On-ground activations in priority micro-markets',
-    ],
-    referrals: [
-      'Referral and investor circle outreach',
-      'NRI-focused conversion touchpoints',
-    ],
+    approach: 'A disciplined lead engine built for conversion, not just clicks.',
+    pillars: ['Qualified lead generation', 'Multi-channel demand creation', 'High-intent buyer targeting'],
     objective:
-      'Target outcomes: early booking momentum, higher visit-to-booking conversion, and faster inventory movement in ~6 months.',
+      'Target outcome: faster booking momentum, stronger demand quality, and disciplined sales execution.',
   },
   highlights: [
     {
@@ -137,12 +115,22 @@ export const aboutData = {
   leadership: [
     {
       name: 'Mahesh S Wadhwa',
-      title: 'Founder - Managing Partner',
+      title: 'Partner',
+      description: [
+        'Strategic oversight for premium project representation.',
+        'Expert in pricing discipline and high-intent buyer conversion.',
+        'Drives execution-first partnerships and market positioning.',
+      ],
       profile: 'https://www.linkedin.com/in/mahesh-s-wadhwa-56420818',
     },
     {
       name: 'Viju Devaiah',
       title: 'Partner',
+      description: [
+        'Leads partner activation and accelerated inventory movement.',
+        'Architects high-velocity sales systems and field playbooks.',
+        'Ensures disciplined lead qualification and closing workflows.',
+      ],
       profile: 'https://www.linkedin.com/in/devaiah-realestateconsulting-landprocurement-realestatemarketing-assetmanagement',
     },
   ],
@@ -153,127 +141,156 @@ export const serviceCards = [
     description:
       'Dedicated representation for select projects with premium positioning and disciplined channel governance.',
     icon: 'Award',
+    accent: 'from-blue-500/15 via-blue-300/5 to-transparent border-blue-200/55 text-blue-100',
   },
   {
     title: 'Sales & Marketing Strategy',
     description:
       'Go-to-market strategy built around target cohorts, pricing rationale, and conversion architecture.',
     icon: 'LineChart',
+    accent: 'from-emerald-500/18 via-emerald-200/6 to-transparent border-emerald-200/55 text-emerald-100',
   },
   {
     title: 'Brand Positioning',
     description:
       'Design a differentiated narrative to increase perceived value and confidence in each launch.',
     icon: 'BadgeCheck',
+    accent: 'from-gold-500/15 via-gold-100/6 to-transparent border-gold-200/55 text-gold-100',
   },
   {
     title: 'Digital Lead Generation',
     description:
       'Architectural creative systems and lead funnels tailored for qualified buyer discovery.',
     icon: 'MousePointerClick',
+    accent: 'from-steelBlue-500/15 via-steelBlue-200/6 to-transparent border-steelBlue-200/50 text-steelBlue-100',
   },
   {
     title: 'Channel Partner Activation',
     description:
       'Network-led growth through tiered partner programs, toolkits, and conversion incentives.',
     icon: 'Users',
+    accent: 'from-rust-500/16 via-rust-100/6 to-transparent border-rust-200/50 text-rust-100',
   },
   {
     title: 'Sales Execution Support',
     description:
       'Field coaching, CRM discipline, objections handling, and close-rate optimization.',
     icon: 'Handshake',
+    accent: 'from-urbanBlue-500/15 via-urbanBlue-100/6 to-transparent border-urbanBlue-200/50 text-urbanBlue-100',
   },
   {
     title: 'Investor & Buyer Consulting',
     description:
       'Analytical advisory for investment viability, buyer fitment, and decision confidence.',
     icon: 'Wallet',
+    accent: 'from-blue-500/12 via-emerald-200/6 to-transparent border-blue-200/45 text-blue-100',
   },
   {
     title: 'Market Research & Advisory',
     description:
       'Demand-signal diagnostics and competitive intelligence feeding smarter campaign choices.',
     icon: 'Search',
+    accent: 'from-rust-500/12 via-steelBlue-200/6 to-transparent border-rust-200/45 text-rust-100',
   },
 ]
 
 export const projectFilters = [
   'All',
+  'Ongoing Projects',
+  'Completed Projects',
   'Residential',
   'Commercial',
   'Luxury',
   'Investment',
-  'Ongoing',
-  'Exclusive',
 ]
 
 export const projects = [
   {
-    title: 'Aster Arcadia Residences',
-    location: 'Bengaluru, Karnataka',
+    title: 'FortJala by Nester Homes',
+    location: 'Chikkajala, Airport Road (North Bangalore), Bengaluru',
     category: 'Residential',
-    status: 'Exclusive',
+    status: 'Ongoing Projects',
     type: 'Luxury',
-    image:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/projects/fortjala%20by%20nester%20homes.jpeg',
     description:
-      'Ultra-luxury high-rise residences with lifestyle-first positioning and pre-launch demand funnel.',
+      'Residential plots with strong pre-launch preparation, partner activation, and focused conversion architecture.',
+    configuration: 'Residential Plots (1200 - 1793 sq.ft)',
+    totalLand: '~2.5 Acres',
+    highlights: ['Selective launch playbook for faster momentum.', 'High-intent buyer qualification and structured follow-up.'],
+    gallery: [
+      '/images/projects/fortjala%20by%20nester%20homes.jpeg',
+      '/images/projects/fortjala.jpeg',
+      '/images/projects/fortjala2.jpeg',
+    ],
   },
   {
-    title: 'Monarch Business Park',
-    location: 'Pune, Maharashtra',
-    category: 'Commercial',
-    status: 'Ongoing',
+    title: 'Artismo Millionaire Tower',
+    location: 'Chikkajala, Airport Road (North Bangalore), Bengaluru',
+    category: 'Residential',
+    status: 'Completed Projects',
     type: 'Investment',
-    image:
-      'https://images.unsplash.com/photo-1590073242671-3d5bc0f3a4b8?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/projects/Artismo%20millionaire%20tower.jpeg',
     description:
-      'Premium grade-A commercial portfolio with strong anchor occupancy strategy and tenant narrative.',
+      'A premium residential tower portfolio with focused positioning across luxury buyer segments.',
+    configuration: '2.5 BHK & 3 BHK',
+    unitSize: '~1350 - 1900 sq.ft',
+    towers: '4 Towers',
+    totalLand: '~5 Acres',
+    highlights: ['Luxury branding with architectural storytelling.', 'Conversion-first funnel design to shorten sales cycles.'],
+    gallery: ['/images/projects/Artismo%20millionaire%20tower.jpeg', '/images/projects/artismo1.jpeg'],
   },
   {
-    title: 'Velvet Garden Enclave',
-    location: 'Hyderabad, Telangana',
+    title: 'Wilderwood by Reozone',
+    location: 'Kumbalgodu / Gerupalya, Mysore Road (Near Kengeri, Bangalore), Bengaluru',
     category: 'Residential',
-    status: 'Exclusive',
+    status: 'Ongoing Projects',
     type: 'Investment',
-    image:
-      'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/projects/wilderwood%20by%20reozone.jpeg',
     description:
-      'Boutique gated development designed for aspirational buyers seeking curated architecture and privacy.',
+      'Residential plots with location-first narrative and a practical buyer-conversion campaign engine.',
+    configuration: 'Residential Plots (600 - 2230 sq.ft)',
+    totalLand: '~8 Acres',
+    highlights: ['Early-stage demand building before launch.', 'Partnership-first lead generation and buyer handling.'],
+    gallery: ['/images/projects/wilderwood%20by%20reozone.jpeg', '/images/projects/wilderwood1.jpeg', '/images/projects/wilderwood2.jpeg'],
   },
   {
-    title: 'Mariner Harbour Complex',
-    location: 'Goa',
-    category: 'Luxury',
-    status: 'Ongoing',
-    type: 'Luxury',
-    image:
-      'https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1400&q=80',
-    description:
-      'Coastal lifestyle destination with elevated hospitality-style positioning and premium partner campaigns.',
-  },
-  {
-    title: 'Crestline Business Residency',
-    location: 'Mumbai, Maharashtra',
-    category: 'Commercial',
-    status: 'Exclusive',
-    type: 'Residential',
-    image:
-      'https://images.unsplash.com/photo-1560185893-a55cbc8c57e4?auto=format&fit=crop&w=1400&q=80',
-    description:
-      'Integrated mixed-use concept balancing premium residence conversion with investor-grade returns.',
-  },
-  {
-    title: 'Aurum Skyline',
-    location: 'Chennai, Tamil Nadu',
+    title: 'Hillside Harmony',
+    location: 'Foot Hills of Nandi, Bengaluru',
     category: 'Residential',
-    status: 'Ongoing',
+    status: 'Ongoing Projects',
     type: 'Luxury',
-    image:
-      'https://images.unsplash.com/photo-1605276374104-de3f4b8f8e5c?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/projects/hillside_main.jpeg',
     description:
-      'Iconic towers with an emphasis on branded lifestyle storytelling and curated lead qualification.',
+      'Lands and luxury-format homes with elevated lifestyle messaging and conversion-ready sales enablement.',
+    configuration: '4 BHK',
+    unitSize: 'North facing 3015 sq.ft, East facing 3060 sq.ft',
+    totalLand: '~4 Acres',
+    highlights: ['Nature-led premium positioning with high visual engagement.', 'Targeted campaign sequencing for buyer trust and conversions.'],
+    gallery: [
+      '/images/projects/hillside_main.jpeg',
+      '/images/projects/hillside1.jpeg',
+      '/images/projects/hillside2.jpeg',
+      '/images/projects/hillside3.jpeg',
+    ],
+  },
+  {
+    title: 'Stellar Heights by Jankal Group',
+    location: 'Sarjapur - Attibele Road (Billapura Cross), Bengaluru',
+    category: 'Residential',
+    status: 'Completed Projects',
+    type: 'Luxury',
+    image: '/images/projects/stellar%20heights%20by%20jankal%20group%20.jpeg',
+    description:
+      'Premium towers crafted for differentiated positioning and strong pre-launch demand pull.',
+    configuration: '2.5 BHK & 3 BHK',
+    unitSize: '~1150 - 1595 sq.ft',
+    towers: '1 Tower',
+    totalLand: '~2.05 Acres',
+    highlights: ['Premium launch narrative with market-grade visual systems.', 'Balanced channel mix for broader qualified pipeline.'],
+    gallery: [
+      '/images/projects/stellar%20heights%20by%20jankal%20group%20.jpeg',
+      '/images/projects/stellar2.jpeg',
+    ],
   },
 ]
 
@@ -281,42 +298,45 @@ export const partners = [
   {
     name: 'Millionaire Tower',
     label: 'MT',
-    logo: '/partner-logos/millionaire-tower-logo.png',
+    logo: '/partner-logos/millionaire%20tower.png',
+    website: 'https://millionairetower.com/',
   },
   {
-    name: 'Walderwood',
+    name: 'Wilderwood',
     label: 'WD',
-    logo: '/partner-logos/walderwood-logo.png',
+    logo: '/partner-logos/wilderwood.png',
+    website: 'https://wilderwood.co.in/',
   },
   {
     name: 'Jankal Group',
     label: 'JG',
-    logo: '/partner-logos/jankal-group-logo.png',
+    logo: '/partner-logos/jankal%20group.png',
   },
   {
     name: 'Solaris',
     label: 'SL',
-    logo: '/partner-logos/solaris-logo.png',
+    logo: '/partner-logos/stellar%20%20heights.png',
   },
   {
     name: 'Nester',
     label: 'NS',
-    logo: '/partner-logos/nester-logo.png',
+    logo: '/partner-logos/nester.png',
   },
   {
     name: 'Hillside Harmony',
     label: 'HH',
-    logo: '/partner-logos/hillside-harmony-logo.png',
+    logo: '/partner-logos/hillside%20harmony.png',
   },
   {
     name: 'Futurearth Group',
     label: 'FG',
-    logo: '/partner-logos/futurearth-group-logo.png',
+    logo: '/partner-logos/futurearth%20group.png',
   },
   {
     name: 'Fortjala',
     label: 'FJ',
-    logo: '/partner-logos/fortjala-logo.png',
+    logo: '/partner-logos/fortjala.png',
+    website: 'https://nester.in/fortjala',
   },
 ]
 
@@ -359,6 +379,27 @@ export const impactMetrics = [
   { label: 'Developer Partnerships', value: 126 },
   { label: 'Sales Campaigns Managed', value: 63 },
   { label: 'Investor/Buyer Connects', value: 9400 },
+]
+
+export const faqs = [
+  {
+    question: 'How does Cityscape help developers sell faster?',
+    answer:
+      'We take an execution-first mandate approach: pre-launch demand planning, channel activation, lead qualification, and direct sales closure support so momentum remains consistent.',
+    contactCta: false,
+  },
+  {
+    question: 'What type of projects do you work with?',
+    answer:
+      'We focus on selective residential and mixed-use projects where founders want focused representation, disciplined positioning, and faster conversion velocity.',
+    contactCta: false,
+  },
+  {
+    question: 'How are qualified leads generated?',
+    answer:
+      'By filtering early for budget readiness, location relevance, and buying intent, then feeding lead pools through structured digital and partner campaigns.',
+    contactCta: true,
+  },
 ]
 
 export const testimonials = [
@@ -422,10 +463,76 @@ export const socialLinks = [
 export const chatPrompts = [
   'Tell me about your services',
   "I'm looking for investment options",
+  'What projects are featured?',
+  'Where is Cityscape located?',
   'Can I submit my property requirement?',
-  'Share your current projects',
 ]
 
+export const chatFAQ = [
+  {
+    question: 'What does Cityscape Consulting do?',
+    answers: [
+      'Cityscape Consulting is a premium mandate partner for developers.',
+      'We focus on exclusive project representation, pre-launch preparation, partner activation, and sales execution support.',
+      'The result is faster momentum, cleaner positioning, and stronger conversion outcomes.',
+    ],
+    keywords: ['services', 'what do', 'cityscape', 'consulting', 'help', 'you do', 'offer', 'can you'],
+    showContact: false,
+  },
+  {
+    question: 'Who is this for?',
+    answers: [
+      'We partner with residential developers and project teams who need focused demand creation and execution support.',
+      'Our model is best for selective mandates where founders want ownership and speed.',
+    ],
+    keywords: ['who', 'developer', 'projects', 'work with', 'type of clients', 'projects we work with'],
+    showContact: false,
+  },
+  {
+    question: 'What projects are featured?',
+    answers: [
+      'Our featured showcase currently highlights: FortJala by Nester Homes, Artismo Millionaire Tower, Wilderwood by Reozone, Hillside Harmony, and Stellar Heights by Jankal Group.',
+      'Each listing includes location, configuration, and launch details.',
+    ],
+    keywords: ['featured', 'projects', 'artismo', 'fortjala', 'wilderwood', 'hillside', 'stellar', 'what projects', 'current projects'],
+    showContact: false,
+  },
+  {
+    question: 'Do you only serve Bangalore?',
+    answers: [
+      'Our current portfolio is Bengaluru-centric, with a strong focus on Airport Road, Mysore Road, and Sarjapur/Attibele clusters.',
+      'We tailor mandates to premium developments and emerging opportunities in these growth corridors.',
+    ],
+    keywords: ['location', 'where', 'area', 'bengaluru', 'bangalore', 'karnataka', 'cityscape location'],
+    showContact: false,
+  },
+  {
+    question: 'How are leads generated?',
+    answers: [
+      'Leads are sourced from digital campaigns, channel partners, and referral networks.',
+      'Each lead is screened for intent before passing into the sales process, so quality stays high and conversion stays focused.',
+    ],
+    keywords: [
+      'lead',
+      'generate',
+      'leads',
+      'lead generation',
+      'qualified',
+      'quality lead',
+      'pipeline',
+    ],
+    showContact: false,
+  },
+  {
+    question: 'Can I submit my property requirement?',
+    answers: [
+      'Yes. You can share your property requirement and preferred segment with our team.',
+      'We will review it and match it with suitable mandate support options.',
+    ],
+    keywords: ['submit', 'requirement', 'property requirement', 'i have', 'interested'],
+    showContact: true,
+  },
+]
 
 
 

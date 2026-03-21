@@ -27,68 +27,71 @@ export default function HeroSection() {
 
       <div className="relative isolate pt-28 md:pt-36 pb-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <div className="flex flex-col items-center md:items-start md:flex-row gap-10 lg:gap-16 pt-10">
             <motion.div
               initial={{ opacity: 0, y: 26 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="max-w-2xl"
+              className="max-w-3xl"
             >
-              <p className="inline-flex items-center gap-2 text-sm md:text-[0.9rem] tracking-[0.22em] uppercase text-gold-100 font-semibold mb-6">
+              <p className="inline-flex items-center gap-2 text-xs sm:text-sm md:text-[0.9rem] tracking-[0.22em] uppercase text-emerald-100 font-bold mb-4 sm:mb-6">
                 Cityscape Consulting
               </p>
-              <h1 className="text-5xl sm:text-6xl xl:text-7xl leading-[0.95] text-ivory font-semibold">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.05] sm:leading-[0.95] text-ivory font-semibold">
                 {heroData.title}
               </h1>
-              <p className="mt-5 text-lg md:text-xl text-stone/90 leading-relaxed">
+              <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-stone/90 leading-relaxed max-w-2xl font-medium">
                 {heroData.subtitle}
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <PrimaryButton
                   href="#projects"
                   iconRight={<ArrowRight size={18} />}
-                  className="w-full sm:w-auto justify-center"
+                  className="w-full sm:w-auto justify-center bg-urbanBlue-600 hover:bg-urbanBlue-500 border-urbanBlue-500 text-white shadow-[0_0_20px_rgba(45,93,143,0.3)]"
                 >
                   Explore Projects
                 </PrimaryButton>
-                <PrimaryButton href="#contact" variant="secondary" className="w-full sm:w-auto justify-center">
+                <PrimaryButton href="#contact" variant="secondary" className="w-full sm:w-auto justify-center border-white/20 hover:bg-white/10">
                   Contact Us
                 </PrimaryButton>
               </div>
-              <a
-                href="#about"
-                className="mt-10 inline-flex items-center gap-2 text-sm text-gold-100 hover:text-gold-50 transition-colors"
-              >
-                Discover how we work <ChevronDown size={16} />
-              </a>
             </motion.div>
+          </div>
 
-            <div className="relative mt-6 md:mt-0">
-                <div className="grid sm:grid-cols-2 gap-4">
-                <div className="section-surface glass p-5" data-levitate>
-                  <p className="text-sm uppercase text-gold-100 tracking-[0.2em]">Focus</p>
-                  <ul className="mt-4 space-y-2 text-sm text-stone/85">
-                    {heroData.badges.map((badge) => (
-                      <li key={badge} className="flex items-start gap-3">
-                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gold-500 shrink-0" />
-                        <span>{badge}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                {heroData.statCards.map((card) => (
-                  <div
+          <div className="relative mt-20 md:mt-24 w-full">
+            <div className="grid sm:grid-cols-3 gap-5 lg:gap-8">
+              {heroData.statCards.map((card, index) => {
+                const colors = [
+                  'bg-urbanBlue-500/10 border-urbanBlue-500/30 from-urbanBlue-500/5 to-charcoal/80',
+                  'bg-emerald-500/10 border-emerald-500/30 from-emerald-500/5 to-charcoal/80',
+                  'bg-rust-500/10 border-rust-500/30 from-rust-500/5 to-charcoal/80',
+                ]
+                const glowColors = [
+                  'bg-urbanBlue-500/30',
+                  'bg-emerald-500/30',
+                  'bg-rust-500/30',
+                ]
+                const textColors = [
+                  'text-urbanBlue-100',
+                  'text-emerald-100',
+                  'text-rust-100',
+                ]
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.15 }}
                     key={card.label}
                     data-levitate
-                    className="section-surface glass p-5 relative overflow-hidden"
+                    className={`rounded-2xl p-6 relative overflow-hidden border backdrop-blur-xl bg-gradient-to-br shadow-xl ${colors[index % colors.length]}`}
                   >
-                    <p className="text-sm text-stone/80">{card.label}</p>
-                    <p className="mt-2 text-3xl font-display text-gold-100">{card.value}</p>
-                    <p className="mt-1 text-xs text-stone/65">{card.note}</p>
-                    <div className="absolute -bottom-8 -right-8 h-20 w-20 rounded-full blur-3xl bg-gold-600/25" />
-                  </div>
-                ))}
-              </div>
+                    <p className="text-xs lg:text-sm uppercase tracking-wider font-semibold text-ivory/80">{card.label}</p>
+                    <p className={`mt-3 text-4xl lg:text-5xl font-display font-bold ${textColors[index % textColors.length]}`}>{card.value}</p>
+                    <p className="mt-2 text-xs lg:text-sm text-stone/80 font-medium">{card.note}</p>
+                    <div className={`absolute -bottom-8 -right-8 h-28 w-28 rounded-full blur-[40px] opacity-70 ${glowColors[index % glowColors.length]}`} />
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </div>

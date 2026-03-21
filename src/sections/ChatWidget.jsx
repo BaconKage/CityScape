@@ -1,119 +1,223 @@
-import React, { useState } from 'react'
-import { MessageCircle, SendHorizontal, X, Paperclip } from 'lucide-react'
-import { chatPrompts } from '../data/siteData'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { MessageCircle, SendHorizontal, X } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { chatFAQ, chatPrompts, contactInfo } from '../data/siteData'
+
+function normalize(input) {
+  return (input || '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s']/g, ' ')
+    .replace(/\s+/g, ' ')
+}
+
+function buildReply(input, faqItems) {
+  const normalized = normalize(input)
+
+  const exact = faqItems.find((item) => normalize(item.question) === normalized)
+  if (exact) {
+    return {
+      text: exact.answers.join('\n\n'),
+      href: exact.showContact ? contactInfo.whatsapp : null,
+      fallbackContact: exact.showContact,
+    }
+  }
+
+  const matched = faqItems.find((item) =>
+    item.keywords.some((keyword) => normalized.includes(keyword.toLowerCase())),
+  )
+
+  if (matched) {
+    return {
+      text: matched.answers.join('\n\n'),
+      href: matched.showContact ? contactInfo.whatsapp : null,
+      fallbackContact: matched.showContact,
+    }
+  }
+
+  return {
+    text: `That needs a more specific discussion. Share your requirement, budget band, and area, and our team will guide you with a tailored response.`,
+    href: contactInfo.whatsapp,
+    fallbackContact: true,
+  }
+}
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false)
-  const [messages, setMessages] = useState([
-    { from: 'agent', text: 'Hi there! How can we help with your real estate mandate?' },
-  ])
   const [draft, setDraft] = useState('')
-  const [fileName, setFileName] = useState('')
+  const [messages, setMessages] = useState([
+    {
+      id: 'init',
+      from: 'agent',
+      text: 'Hi there! Choose a quick topic below or type your question to get instant answers about our services.',
+    },
+  ])
+  const [isTyping, setIsTyping] = useState(false)
+  const listRef = useRef(null)
+  const faqItems = useMemo(() => chatFAQ, [])
 
-  const handleSend = () => {
-    if (!draft.trim()) return
-    setMessages((prev) => [...prev, { from: 'user', text: draft }])
+  useEffect(() => {
+    if (!listRef.current) return
+    listRef.current.scrollTo({ top: listRef.current.scrollHeight, behavior: 'smooth' })
+  }, [messages])
+
+  const sendMessage = (text) => {
+    const messageText = normalize(text)
+    if (!messageText) return
+
+    const userMessage = { id: `${Date.now()}-u`, from: 'user', text: text.trim() }
+    const reply = buildReply(messageText, faqItems)
+
+    setMessages((prev) => [...prev, userMessage])
     setDraft('')
+    setIsTyping(true)
+
+    window.setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `${Date.now()}-a`,
+          from: 'agent',
+          text: reply.text,
+          href: reply.href,
+          showContactHint: reply.fallbackContact,
+        },
+      ])
+      setIsTyping(false)
+    }, 320)
+  }
+
+  const onSendClick = () => {
+    sendMessage(draft)
   }
 
   return (
     <>
       <motion.button
-        whileHover={{ scale: 1.06, rotate: 0.5 }}
-        whileTap={{ scale: 0.97 }}
+        type="button"
+        whileHover={{ scale: 1.07, rotate: 0.25 }}
+        whileTap={{ scale: 0.96 }}
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        type="button"
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="fixed right-4 sm:right-7 bottom-4 sm:bottom-7 z-40 h-14 w-14 rounded-full bg-gold-100 text-charcoal shadow-luxe grid place-items-center hover:scale-105 transition-transform"
-        aria-label="Toggle chat widget"
-        data-interactive
-        data-levitate
+        transition={{ type: 'spring', stiffness: 220, damping: 20 }}
+        onClick={() => setIsOpen((current) => !current)}
+        className="fixed right-4 sm:right-7 bottom-4 sm:bottom-7 z-40 h-14 w-14 rounded-full bg-gold-100 text-charcoal shadow-luxe grid place-items-center hover:scale-105 transition-colors"
+        aria-label="Toggle assistant"
       >
         {isOpen ? <X size={20} /> : <MessageCircle size={20} />}
       </motion.button>
 
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.96, y: 20 }}
-            transition={{ duration: 0.22 }}
-            className="fixed right-4 sm:right-7 bottom-24 sm:bottom-28 z-40 w-[calc(100vw-2rem)] max-w-sm sm:w-[320px] max-h-[70vh] pb-[env(safe-area-inset-bottom)]"
-            data-interactive
-            data-levitate
+        {isOpen ? (
+          <motion.aside
+            initial={{ opacity: 0, y: 24, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 24, scale: 0.96 }}
+            transition={{ duration: 0.18, ease: 'easeOut' }}
+            className="fixed z-40 right-[max(1rem,env(safe-area-inset-right))] sm:right-7 bottom-[max(5rem,calc(5.5rem+env(safe-area-inset-bottom)))] sm:bottom-28 w-[min(360px,calc(100vw-1.25rem))] max-w-[min(360px,calc(100vw-1.25rem))]"
           >
-            <div className="section-surface rounded-3xl border border-white/20 overflow-hidden">
-              <div className="px-5 py-4 subtle-border bg-white/5">
-                <h4 className="font-semibold">Cityscape AI Assistant</h4>
-                <p className="text-xs text-stone/70 mt-1">UI demo - backend connection pending.</p>
+            <div className="section-surface flex flex-col max-h-[calc(100vh-120px)] sm:max-h-[min(640px,calc(100vh-160px))] rounded-3xl border border-white/20 overflow-hidden bg-charcoal/95 backdrop-blur-2xl shadow-2xl">
+              <div className="shrink-0 px-5 py-4 border-b border-white/10 bg-white/5">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <h4 className="font-semibold text-gold-50">FAQ & Guidance</h4>
+                    <p className="text-[11px] text-stone/60 mt-0.5">Instant answers to common queries</p>
+                  </div>
+                  <span className="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-gold-100/10 border border-gold-100/20 text-gold-100 font-medium">
+                    Auto-Reply
+                  </span>
+                </div>
               </div>
 
-              <div className="max-h-64 overflow-y-auto p-4 space-y-3">
-                {messages.map((message, idx) => (
-                  <div
-                    key={`${message.text}-${idx}`}
-                    data-levitate
-                    className={`text-sm rounded-2xl px-3 py-2 max-w-[85%] ${
-                      message.from === 'user'
-                        ? 'ml-auto bg-gold-100/90 text-charcoal'
-                        : 'bg-white/8 text-stone'
-                    }`}
-                    data-interactive
-                  >
-                    {message.text}
+              <div className="flex-1 min-h-[200px] overflow-y-auto p-4 space-y-3" ref={listRef}>
+                {messages.map((message) => (
+                  <div key={message.id} className={`grid ${message.from === 'user' ? 'justify-items-end' : 'justify-items-start'}`}>
+                    <div
+                      className={`rounded-2xl px-4 py-3 text-sm max-w-[86%] w-fit min-w-0 break-words overflow-hidden leading-relaxed shadow-sm transition-all ${
+                        message.from === 'user'
+                          ? 'bg-gold-600/90 text-charcoal font-medium rounded-br-sm'
+                          : 'bg-white/10 text-stone/95 border border-white/10 rounded-bl-sm'
+                      }`}
+                    >
+                      <p className="whitespace-pre-wrap break-words">{message.text}</p>
+                      {message.from === 'agent' && message.showContactHint ? (
+                        <p className="text-[11px] mt-2 opacity-85">
+                          Need a direct response? Use WhatsApp or contact details.
+                        </p>
+                      ) : null}
+                      {message.href ? (
+                        <a
+                          href={message.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-2 inline-flex text-xs text-gold-100 hover:text-gold-50 transition-colors"
+                        >
+                          Open WhatsApp
+                        </a>
+                      ) : null}
+                    </div>
                   </div>
                 ))}
+
+                {isTyping ? (
+                  <div className="justify-items-start grid">
+                    <div className="rounded-2xl px-3 py-2 text-sm bg-white/8 border border-white/12 text-stone/75">
+                      Typing...
+                    </div>
+                  </div>
+                ) : null}
               </div>
 
-              <div className="px-4 py-3 border-t border-white/10">
-                <div className="flex flex-wrap gap-2 mb-3">
+              <div className="shrink-0 px-4 py-3 border-t border-white/10">
+                <p className="text-[11px] uppercase tracking-wider text-stone/50 mb-2.5 font-medium">Suggested topics</p>
+                <div className="flex flex-wrap gap-1.5 mb-4">
                   {chatPrompts.map((prompt) => (
                     <button
                       key={prompt}
                       type="button"
-                      onClick={() => setDraft(prompt)}
-                      data-interactive
-                      data-levitate
-                      className="rounded-full border border-white/15 px-3 py-1.5 text-xs text-stone hover:bg-white/8"
+                      onClick={() => sendMessage(prompt)}
+                      className="rounded-full border border-gold-100/30 bg-gold-100/5 px-3 py-1.5 text-[11px] text-gold-50/90 hover:bg-gold-100/20 hover:text-gold-50 hover:border-gold-100/50 transition-all font-medium"
                     >
                       {prompt}
                     </button>
                   ))}
                 </div>
+
+                <label className="sr-only" htmlFor="chat-input">
+                  Type your question
+                </label>
                 <div className="flex items-center gap-2">
-                  <label className="shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/20 hover:bg-white/10 cursor-pointer">
-                    <Paperclip size={17} />
-                    <input
-                      type="file"
-                      onChange={(e) => setFileName(e.target.files?.[0]?.name || '')}
-                      className="sr-only"
-                    />
-                  </label>
                   <input
+                    id="chat-input"
                     value={draft}
-                    onChange={(e) => setDraft(e.target.value)}
-                    data-interactive
-                    data-levitate
-                    className="min-h-[42px] w-full rounded-full border border-white/20 bg-white/5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-gold-100/40"
-                    placeholder={fileName ? `Attached: ${fileName}` : 'Ask anything...'}
+                    onChange={(event) => setDraft(event.target.value)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter') {
+                        event.preventDefault()
+                        onSendClick()
+                      }
+                    }}
+                    placeholder="Type your question..."
+                    className="min-h-[44px] w-full rounded-full border border-white/15 bg-white/5 px-4 text-sm focus:outline-none focus:border-gold-100/40 focus:bg-white/10 transition-colors placeholder:text-stone/50"
                   />
                   <button
                     type="button"
-                    onClick={handleSend}
-                    data-interactive
-                    data-levitate
-                    className="h-10 w-10 rounded-full bg-gold-600 text-charcoal grid place-items-center shrink-0"
+                    onClick={onSendClick}
+                    disabled={isTyping}
+                    className="h-11 w-11 rounded-full bg-gold-600 text-charcoal grid place-items-center disabled:opacity-60 disabled:cursor-not-allowed"
+                    aria-label="Send message"
                   >
                     <SendHorizontal size={16} />
                   </button>
                 </div>
+
+                <p className="mt-2 text-[11px] text-stone/65">
+                  Email: {contactInfo.email} | Phone: {contactInfo.phone}
+                </p>
               </div>
             </div>
-          </motion.div>
-        )}
+          </motion.aside>
+        ) : null}
       </AnimatePresence>
     </>
   )

@@ -9,20 +9,20 @@ function LogoPill({ partner }) {
   const [showFallback, setShowFallback] = useState(false)
 
   return (
-    <div className="min-h-7 min-w-20 flex items-center justify-center">
+    <div className="flex items-center justify-center w-full h-full relative group">
       {!showFallback && (
         <img
           src={partner.logo}
           alt={partner.name}
           onError={() => setShowFallback(true)}
           onLoad={() => setShowFallback(false)}
-          className="h-7 max-w-28 object-contain"
+          className="h-10 md:h-14 max-w-[140px] md:max-w-[180px] object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
           data-partner-logo
         />
       )}
       {showFallback && (
-        <span className="text-sm md:text-base font-semibold tracking-wide text-ivory">
+        <span className="text-lg md:text-xl font-bold tracking-widest text-white/80">
           {fallbackText}
         </span>
       )}
@@ -42,29 +42,32 @@ export default function PartnersSection() {
           description="We collaborate with high-performing development teams through disciplined execution and shared growth outcomes."
         />
 
-        <div className="mt-10">
-          <div className="overflow-hidden border-y border-white/10 py-4">
-            <motion.div
-              className="flex w-max gap-4 md:gap-5"
-              animate={{ x: ['0%', '-50%'] }}
-              transition={{
-                repeat: Infinity,
-                duration: 24,
-                ease: 'linear',
-              }}
-            >
-              {duplicated.map((partner, index) => (
-                <div
-                  key={`${partner.name}-${index}`}
-                  data-interactive
-                  data-levitate
-                  className="h-20 min-w-40 md:min-w-56 rounded-full section-surface px-5 flex items-center justify-center border border-white/10 grayscale hover:grayscale-0 transition-all relative"
-                >
-                  <LogoPill partner={partner} />
-                  <span className="ml-2 text-xs text-stone/70 hidden sm:block">{partner.name}</span>
-                </div>
-              ))}
-            </motion.div>
+        <div className="mt-10 overflow-hidden group">
+          <div className="border-y border-white/10 py-6">
+            <div className="flex w-max gap-4 md:gap-5 animate-marquee transition-all">
+              {duplicated.map((partner, index) => {
+                const innerClass = "h-24 md:h-32 min-w-[200px] md:min-w-[280px] px-8 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 will-change-transform"
+                
+                return partner.website ? (
+                  <a
+                    key={`${partner.name}-${index}`}
+                    href={partner.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={innerClass + " cursor-pointer hover:bg-white/5 rounded-3xl group/logo"}
+                  >
+                    <LogoPill partner={partner} />
+                  </a>
+                ) : (
+                  <div
+                    key={`${partner.name}-${index}`}
+                    className={innerClass + " cursor-default group/logo"}
+                  >
+                    <LogoPill partner={partner} />
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
 
